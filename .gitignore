@@ -1,0 +1,5 @@
+lp-project/node_modules/
+api/node_modules/
+#package/
+
+lp-project/.vscode

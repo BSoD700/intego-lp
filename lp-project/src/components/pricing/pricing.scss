@@ -1,0 +1,210 @@
+@import 'src/assets/styles/variables';
+
+.pricing-wrapper {
+    background-image: linear-gradient(
+        180deg,
+        #ecebf200 0%,
+        #ecebf2e6 33%,
+        #ecebf2 100%
+    );
+    padding-top: 166px;
+    padding-bottom: 120px;
+    @media (max-width: $brk-min-desktop-width) {
+        padding-top: 100px;
+        text-align: center;
+        padding-bottom: 100px;
+    }
+    @media (max-width: $brk-ipad-width - 1) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .content {
+        max-width: 751px;
+        h3 {
+            font-size: 48px;
+            margin-bottom: 6px;
+            font-weight: 900;
+            color: $text-dark-title;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: $text-dark-sub;
+            margin-bottom: 22px;
+        }
+        .protection {
+            display: flex;
+            margin-bottom: 41px;
+            align-items: center;
+            @media (max-width: $brk-min-desktop-width) {
+                justify-content: center;
+            }
+            @media (max-width: $brk-ipad-width - 1) {
+                flex-direction: column;
+            }
+            & > div {
+                display: flex;
+                align-items: center;
+                @media (max-width: $brk-ipad-width - 1) {
+                    margin-top: 17px;
+                }
+            }
+            p {
+                margin-bottom: 0;
+                font-size: 18px;
+                color: #4f4f64;
+            }
+            .year {
+                color: #7e7e9c;
+                font-size: 15px;
+                margin-right: 0;
+                margin-left: 20px;
+                &.active {
+                    color: #198fc3;
+                }
+                &:nth-last-of-type(1) {
+                    margin-left: 6px;
+                }
+            }
+        }
+    }
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: $brk-min-desktop-width) {
+            justify-content: center;
+            align-items: center;
+            flex-direction: column-reverse;
+            gap: 40px;
+        }
+        @media (max-width: $brk-ipad-width - 1) {
+            gap: 32px;
+        }
+        .card {
+            flex: 0 0 540px;
+            background-color: #fff;
+            box-shadow: 4px 12px 40px #081b3e17;
+            border-radius: 24px;
+            padding: 25px 32px;
+            text-align: center;
+            @media (max-width: $brk-desktop-width) {
+                flex: 0 0 450px;
+            }
+            @media (max-width: $brk-min-desktop-width) {
+                flex: auto;
+                max-width: 568px;
+            }
+            @media (max-width: $brk-ipad-width - 1) {
+                max-width: 336px;
+            }
+            &:nth-last-of-type(1) {
+                margin-bottom: 0;
+            }
+            .ribon {
+                background-image: linear-gradient(
+                    79deg,
+                    #00dfa1 0%,
+                    #1f7ccc 100%
+                );
+                border: 1px solid #1fc5c2;
+                border-radius: 56px;
+                height: 32px;
+                backdrop-filter: blur(21px);
+                -webkit-backdrop-filter: blur(21px);
+                color: #fff;
+                padding: 8px 36px;
+                top: -40px;
+                margin-bottom: -40px;
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                p {
+                    margin-bottom: 0;
+                }
+            }
+            .card-header {
+                text-align: center;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    margin-bottom: 4px;
+                }
+                .title {
+                    color: #2e2e39;
+                    font-size: 19px;
+                    margin-bottom: 8px;
+                    font-weight: 800;
+                }
+                .subtitle {
+                    color: #454557;
+                    font-size: 16px;
+                    margin-bottom: 16px;
+                }
+                .mac {
+                    border: 1px solid #bcd6e6;
+                    border-radius: 18px;
+                    margin-bottom: 16px;
+                }
+            }
+            .card-body {
+                text-align: center;
+                .price {
+                    display: flex;
+                    margin-bottom: 25px;
+                    justify-content: center;
+                    align-items: flex-end;
+                    margin-top: 16px;
+                    .offers {
+                        color: #2e2e39;
+                        font-size: 28px;
+                        font-weight: 800;
+                        line-height: 1;
+                        margin-bottom: 0;
+                        margin-right: 8px;
+                    }
+                    .original {
+                        color: #999999;
+                        font-size: 16px;
+                        line-height: 1;
+                        text-decoration: line-through;
+                        margin-bottom: 3px;
+                    }
+                }
+            }
+            .card-footer {
+                margin-top: 24px;
+                border-top: solid 1px #dedede;
+                padding: 24px 24px 0;
+                text-align: start;
+                .title {
+                    color: #454557;
+                    font-size: 15px;
+                    margin-bottom: 12px;
+                }
+                ul {
+                    list-style-type: none;
+                    padding: 0;
+                    li {
+                        color: #7e7e9c;
+                        font-size: 14px;
+                        margin-bottom: 12px;
+                        display: flex;
+                        align-items: flex-start;
+                        svg {
+                            margin-top: 3px;
+                            flex: 0 0 12.5px;
+                        }
+                        &.color {
+                            background-color: #fca72710;
+                            padding: 12px;
+                            border-radius: 12px;
+                            &.best {
+                                background-color: #3cd8b710;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

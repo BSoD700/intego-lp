@@ -1,0 +1,110 @@
+@import "src/assets/styles/variables";
+
+.jumbo-wapper {
+  padding-top: $nav-hight + 72px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: $brk-min-desktop-width) {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  .content {
+    flex: 0 0 522px;
+    @media (max-width: $brk-min-desktop-width) {
+      flex: auto;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 6px;
+      margin-top: 0;
+      @media (max-width: $brk-min-desktop-width) {
+        font-size: 20px;
+      }
+      @media (max-width: $brk-ipad-width) {
+        font-size: 18px;
+      }
+    }
+    h2 {
+      font-size: 64px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      margin-top: 0;
+      @media (max-width: $brk-min-desktop-width) {
+        font-size: 52px;
+      }
+      @media (max-width: $brk-ipad-width) {
+        font-size: 40px;
+      }
+      br {
+        @media (max-width: $brk-min-desktop-width) {
+          display: none;
+        }
+      }
+    }
+    .sub {
+      margin-bottom: 24px;
+      font-size: 18px;
+    }
+    .sub-button {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: $text-dark-sub-low;
+      @media (max-width: $brk-min-desktop-width) {
+        justify-content: center;
+      }
+      @media (max-width: $brk-ipad-width) {
+        flex-direction: column;
+      }
+      .mac {
+        display: flex;
+        align-items: center;
+        img {
+          width: 16px;
+        }
+        span {
+          margin-bottom: 0;
+          margin-left: 4px;
+          margin-right: 11px;
+        }
+      }
+      .system {
+        color: $text-dark-sub-low;
+        padding-left: 11px;
+        border-left: 1px solid $text-dark-sub-low;
+        text-decoration: underline;
+        @media (max-width: $brk-ipad-width) {
+          border-left: none;
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+  .img-wrapper {
+    flex: 0 0 570px;
+    @media (max-width: $brk-desktop-width) {
+      flex: 0 0 400px;
+    }
+    @media (max-width: $brk-min-desktop-width) {
+      flex: auto;
+    }
+    img {
+      width: 570px;
+      @media (max-width: $brk-desktop-width) {
+        width: 400px;
+      }
+      @media (max-width: $brk-ipad-width) {
+        width: 336px;
+      }
+    }
+  }
+}

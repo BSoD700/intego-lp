@@ -1,0 +1,118 @@
+@import "src/assets/styles/variables";
+
+.section-jiffy-wrapper {
+  text-align: center;
+  padding-top: 227px;
+  background-image: url(../../assets/images/path1.svg);
+  background-repeat: no-repeat;
+  background-size: 631px 676px;
+  background-position: top 269px left calc(50% + 800px/2);
+  @media (max-width: $brk-min-desktop-width) {
+    padding-top: 96px;
+  }
+  @media (max-width: $brk-ipad-width) {
+    padding-top: 66px;
+  }
+  h2, .subtitle {
+    max-width: 752px;
+    margin: 0 auto;
+  }
+  .subtitle {
+    margin-bottom: 31px;
+    color: $text-dark-sub;
+    font-size: 20px;
+    @media (max-width: $brk-ipad-width) {
+      font-size: 18px;
+    }
+  }
+  h2 {
+    margin-bottom: 12px;
+    font-size: 48px;
+    color: $text-dark-title;
+    @media (max-width: $brk-ipad-width) {
+      font-size: 32px;
+    }
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 752px;
+    margin: 0 auto;
+    text-align: start;
+    gap: 24px;
+    @media (max-width: $brk-ipad-width) {
+      display: block;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      box-shadow: 4px 12px 40px #081B3E17;
+      border-radius: 24px;
+      padding: 38px 48px 48px;
+     
+      @media (max-width: $brk-min-desktop-width) {
+        padding: 38px 40px 48px;
+      }
+      @media (max-width: $brk-ipad-width) {
+        padding: 40px 24px;
+        flex-direction: column-reverse;
+        max-width: 336px;
+        margin: 0 auto 24px;
+      }
+      h3 {
+        font-size: 28px;
+        color: $text-dark-sub;
+        margin-bottom: 14px;
+        @media (max-width: $brk-ipad-width) {
+          font-size: 24px;
+        }
+      }
+      p {
+        font-size: 16px;
+        color: $text-dark-sub-low;
+        margin-bottom: 0;
+        @media (max-width: $brk-ipad-width) {
+          margin-bottom: 24px;
+        }
+      }
+      img {
+        width: 268px;
+       
+      }
+      &:nth-last-of-type(1) {
+        @media (max-width: $brk-ipad-width) {
+          margin-bottom: 0;
+        }
+      }
+      &.first {
+        grid-column: 1 / span 2;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        padding: 60px 48px;
+        @media (max-width: $brk-min-desktop-width) {
+          padding: 60px 40px;
+        }
+        @media (max-width: $brk-ipad-width) {
+          padding: 40px 24px;
+          flex-direction: column-reverse;
+          justify-content: start;
+        }
+        .card-body {
+          flex: 0 0 314px;
+          @media (max-width: $brk-ipad-width) {
+            flex: auto;
+          }
+        }
+        img {
+          width: 280px;
+          flex: 0 0 280px;
+          @media (max-width: $brk-ipad-width) {
+            flex: auto;
+            width: 268px;
+          }
+        }
+      }
+    }
+  }
+}

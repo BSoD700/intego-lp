@@ -1,0 +1,96 @@
+@import "src/assets/styles/variables";
+
+.section-pref-wrapper {
+  padding-top: 128px;
+  @media (max-width: $brk-min-desktop-width) {
+    padding-top: 100px;
+  }
+  @media (max-width: $brk-ipad-width) {
+    padding-top: 60px;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $brk-min-desktop-width) {
+     display: block;
+     text-align: center;
+    }
+    .content {
+      flex: 0 0 558px;
+      h2 {
+        color: $text-dark-title;
+        font-size: 36px;
+        margin-bottom: 24px;
+        font-weight: 900;
+        @media (max-width: $brk-ipad-width) {
+          font-size: 32px;
+        }
+      }
+      .subtitle {
+        color: $text-dark-sub;
+        font-size: 20px;
+        margin-bottom: 21px;
+        @media (max-width: $brk-ipad-width) {
+          font-size: 16px;
+          margin-bottom: 24px;
+        }
+      }
+      .blocks {
+        display: flex;
+        gap: 24px;
+        @media (max-width: $brk-min-desktop-width) {
+          justify-content: center;
+        }
+        @media (max-width: $brk-ipad-width) {
+          flex-direction: column;
+          max-width: 320px;
+          margin: 0 auto;
+        }
+        .block {
+          flex: 0 0 170px;
+          @media (max-width: $brk-ipad-width) {
+            flex: auto;
+            display: flex;
+            align-items: center;
+            gap: 38px;
+            text-align: start;
+          }
+          h3 {
+            color: $text-dark-sub;
+            font-size: 36px;
+            margin-bottom: 6px;
+            font-weight: 900;
+            @media (max-width: $brk-ipad-width) {
+              flex: 0 0 55px;
+              font-size: 28px;
+              margin-bottom: 0;
+            }
+          }
+          p {
+            margin-bottom: 0;
+            color: $text-dark-sub-low;
+            font-size: 16px;
+            @media (max-width: $brk-ipad-width) {
+              flex: 0 0 180px;
+            }
+          }
+        }
+      }
+    }
+    img.pref {
+      flex: 0 0 476px;
+      width: 476px;
+      @media (max-width: $brk-desktop-width) {
+        flex: 0 0 400px;
+        width: 400px;
+      }
+      @media (max-width: $brk-min-desktop-width) {
+        width: 476px;
+        margin-top: 46px;
+      }
+      @media (max-width: $brk-ipad-width) {
+        width: 336px;
+      }
+    }
+  }
+}
