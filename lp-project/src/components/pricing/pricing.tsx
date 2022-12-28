@@ -31,36 +31,36 @@ const Pricing: FC<PricingProps> = () => {
         { original: {} },
         { offers: {} },
     ]);
-    // value of macs
-    const [value, setValue] = useState<string>('1');
-    const [value2, setValue2] = useState<string>('1');
+    // macValue of macs
+    const [macValue, setmacValue] = useState<string>('1');
+    const [macValue2, setmacValue2] = useState<string>('1');
 
-    function handleSelect(value: string) {
-        setValue(value);
+    function handleSelect(macValue: string) {
+        setmacValue(macValue);
     }
-    function handleSelect2(value2: string) {
-        setValue2(value2);
+    function handleSelect2(macValue2: string) {
+        setmacValue2(macValue2);
     }
+    // handle price values with year checked and listboxs
+    HandleUseEffect(checked, macValue2, 'bn_mpb_x9_vpn', setPrices2);
+    HandleUseEffect(checked, macValue, 'bn_is_x9', setPrices);
 
-    useEffect(() => {
-        fetch(
-            `http://localhost:3001/getPriceByBundle?bundle=bn_is_x9&year=${
-                checked ? 2 : 1
-            }&seats=${value}`
-        )
-            .then((response) => response.json())
-            .then((data) => setPrices(data));
-    }, [checked, value]);
-    useEffect(() => {
-        fetch(
-            `http://localhost:3001/getPriceByBundle?bundle=bn_mpb_x9_vpn&year=${
-                checked ? 2 : 1
-            }&seats=${value2}`
-        )
-            .then((response) => response.json())
-            .then((data) => setPrices2(data));
-    }, [checked, value2]);
-
+    function HandleUseEffect(
+        checked: boolean,
+        macValue: string,
+        bundleID: string,
+        setPriceBundel: any
+    ): void {
+        useEffect(() => {
+            fetch(
+                `http://localhost:3001/getPriceByBundle?bundle=${bundleID}&year=${
+                    checked ? 2 : 1
+                }&seats=${macValue}`
+            )
+                .then((response) => response.json())
+                .then((data) => setPriceBundel(data));
+        }, [checked, macValue, bundleID, setPriceBundel]);
+    }
     let bundles = [
         {
             original: {},
@@ -74,7 +74,6 @@ const Pricing: FC<PricingProps> = () => {
     // set data to original and offers
     prices.forEach((bundle) => {
         if (bundle.original) {
-            console.log(' bundle.original ', bundle.original);
             bundles[0].original = bundle.original;
         } else {
             bundles[0].offers = bundle.offers;
@@ -82,21 +81,18 @@ const Pricing: FC<PricingProps> = () => {
     });
     prices2.forEach((bundle) => {
         if (bundle.original) {
-            console.log(' bundle.original ', bundle.original);
             bundles[1].original = bundle.original;
         } else {
             bundles[1].offers = bundle.offers;
         }
     });
 
-    // console.log('original ', original);
     function getPrice(bundle: bundle | undefined): string {
         let price: string = '';
         if (bundle) {
             price =
                 Object.values(bundle)[0] &&
                 JSON.stringify(Object.values(bundle)[0]['USD']);
-            console.log('price ', price && price.split('"'));
         }
         return price && price.split('"')[1];
     }
@@ -130,7 +126,7 @@ const Pricing: FC<PricingProps> = () => {
                             <div key={index} className="card">
                                 {item.best ? (
                                     <div className="ribon">
-                                        <p>BEST VALUE</p>
+                                        <p>BEST macValue</p>
                                     </div>
                                 ) : null}
 
@@ -141,15 +137,15 @@ const Pricing: FC<PricingProps> = () => {
                                     {item.best ? (
                                         <Select
                                             options={macs}
-                                            handleSelect={(value2: string) =>
-                                                handleSelect2(value2)
+                                            handleSelect={(macValue2: string) =>
+                                                handleSelect2(macValue2)
                                             }
                                         />
                                     ) : (
                                         <Select
                                             options={macs}
-                                            handleSelect={(value: string) =>
-                                                handleSelect(value)
+                                            handleSelect={(macValue: string) =>
+                                                handleSelect(macValue)
                                             }
                                         />
                                     )}
