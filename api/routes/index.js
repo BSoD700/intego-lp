@@ -22,8 +22,9 @@ router.get("/getPriceByBundle", function (req, res, next) {
             let isName = key.startsWith(bundle);
             if (isName) {
               let name = key.split(bundle)[1].split("_");
-              sitAndYear = name.filter((a) => a != "");
-              return check(sitAndYear);
+              // remove empty array's slots
+              const sitAndYear = name.filter((a) => a != "");
+              return checkSeatsAndYear(sitAndYear);
             }
           } else {
             return key;
@@ -43,7 +44,7 @@ router.get("/getPriceByBundle", function (req, res, next) {
     return;
   }
 
-  function check(name) {
+  function checkSeatsAndYear(name) {
     if (year && seats) {
       if (year != "*" && seats != "*") {
         return name[1] == year && name[0] == seats;
