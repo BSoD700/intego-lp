@@ -15,7 +15,7 @@
   <h1>Price Converter</h1>
         <p>
           <?php
-           
+            // Get data from api
             function getResponseFromApi($price,$FromCurency,$ToCurency) {
               $curl = curl_init();
 
@@ -47,6 +47,7 @@
                 return $manage["result"];
               }
             }
+            // Round the price
             function rounder($num){
               $fln=0.99;
               $numlength =  $num !== 0 ? floor(log10($num) + 1) : 1; 
@@ -66,6 +67,8 @@
               }
               return $newNum;
             }
+
+            // -----
             function PriceConverter($price, $ToCurency) {
 
               $supportedCurrencies = [
@@ -247,6 +250,7 @@
                 'ZAR' => 'R',
                 'ZWD' => 'Z$',
               ];
+
               $TotalPrice = 0;
               $defaultCurency = 'USD';
 
